@@ -6,12 +6,12 @@ const TodoList = ({todoe}) =>{
     const elements = todoe.map((item)=>{
         const {id, ...itemProps} = item;
         return  (
-            <li key = {id}>
+            <li key = {id} className="list-group-item">
                 <TodoListItem {...itemProps}/>
              </li>)
     })
     return(
-        <ul>
+        <ul className="list-group">
             {elements}
         </ul>
     );
