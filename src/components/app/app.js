@@ -46,6 +46,14 @@ import ItemAddForm from "../item-add-form";
             }
         })
      }
+
+     onToggleImportant = (id) =>{
+         console.log('Toggle important', id)
+     }
+     onToggleDone = (id) =>{
+         console.log('Toggle done', id)
+     }
+
     render() {
         return (
             <div className="todo-app">
@@ -56,7 +64,10 @@ import ItemAddForm from "../item-add-form";
                 </div>
 
                 <TodoList todos={this.state.todoData}
-                          onDeleted={this.deleteItem}/>
+                          onDeleted={this.deleteItem}
+                          onToggleImportant = {this.onToggleImportant}
+                          onToggleDone = {this.onToggleDone}
+                />
                           <ItemAddForm onItemAdded = {this.addItem}/>
             </div>
         );
